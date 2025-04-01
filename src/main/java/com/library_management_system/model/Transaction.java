@@ -34,9 +34,10 @@ public class Transaction {
     @Enumerated(value = EnumType.STRING)
     private TranscationType transactionType;
 
-
-//    private Card card;
-//
-//
-//    private Book book;
+@ManyToOne
+@JoinColumn
+    private Card card;
+@JoinColumn
+@ManyToOne
+    private Book book;
 }

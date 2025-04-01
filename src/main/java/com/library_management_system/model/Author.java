@@ -3,6 +3,7 @@ package com.library_management_system.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -34,6 +35,6 @@ public class Author {
     @Column(name="rating", nullable = false)
     private double rating;
 
-         // one author writes many books so book list is created to store multiple books
-//    private List<Book> bookList;
+    @OneToMany (mappedBy = "author")// one author writes many books so book list is created to store multiple books
+    private List<Book> bookList=new ArrayList<>();
 }

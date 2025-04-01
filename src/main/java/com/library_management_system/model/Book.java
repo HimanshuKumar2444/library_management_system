@@ -39,11 +39,14 @@ public class Book {
 
 
     private boolean availability;
-
-//    private Author author;
-//    private Card card;
-//
-//    private List<Transaction> transactionList;
+    @ManyToOne
+    @JoinColumn
+    private Author author;
+   @ManyToOne
+   @JoinColumn
+    private Card card;
+@OneToMany(mappedBy = "book")
+    private List<Transaction> transactionList;
 
 
 }
